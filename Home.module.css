@@ -1,0 +1,55 @@
+.main{
+    margin-top: 60px;
+    background-color: white;
+    width: 100%;
+    height: 100%;
+}
+
+.settingsPicture{
+    width: 21px;
+    height: 21px;
+    margin-left: 20px;
+}
+
+.PictureProfile{
+    width: 153px;
+    height: 153px;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 300%;
+}
+
+.Title{
+    margin-top: 30px;
+    text-align: center;
+    font-size: 30px;
+    font-family: "Helvetica Neue";
+}
+
+.Bar{
+
+    width: 100%;
+    margin-top: 30px;
+    justify-content: space-around;
+    flex-direction: row;
+    align-items: center;
+    height: 49px;
+    background-color: rgba(217, 217, 217, 1);
+
+}
+
+.pluginImage {
+    border-radius: 10px;
+}
+
+.TextComponent {
+    margin-left: 10px;
+    width: 60%;
+
+}
+
+.textOverflow {
+    text-overflow: ellipsis;
+    font-size: 10px;
+}
