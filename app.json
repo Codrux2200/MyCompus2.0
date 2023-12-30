@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "MyCompus2.0",
-    "slug": "MyCompus2.0",
+    "slug": "MyCompus",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",

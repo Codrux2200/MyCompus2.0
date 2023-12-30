@@ -11,6 +11,8 @@
     width: 80%;
     height: 30px;
     border-radius: 10px;
+    margin-bottom: 20px;
+    padding-left: 10px;
 }
 
 .loginContainer {
@@ -29,4 +31,15 @@
 .LoginText {
     font-weight: bold;
     font-size: 30;
+}
+
+.labelChoice{
+    border: 1px solid black;
+    width: 80%;
+    height: 30px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    padding-left: 10px;
 }

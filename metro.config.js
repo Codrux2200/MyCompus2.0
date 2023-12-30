@@ -9,7 +9,7 @@ module.exports = (async () => {
       babelTransformerPath: require.resolve("react-native-css-transformer")
     },
     resolver: {
-      sourceExts: [...sourceExts, "css"]
+      sourceExts: [...sourceExts, "css", "cjs"]
     }
   };
 })();

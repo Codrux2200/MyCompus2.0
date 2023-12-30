@@ -4,27 +4,32 @@ import style from "./App.module.css"
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { useNavigation } from '@react-navigation/native';
+import {AnnonceSheet} from "./BottomSheets/AnnonceSheet"
 import { Home } from './Home';
+import { CardStyleInterpolators } from "@react-navigation/stack";
+import {app} from "./Backend/firebase_config"
+import { LoginUser } from './Backend/login';
+import { useState } from 'react';
+import {RegisterPage} from "./register/register"
 
 function LoginPage(){
   const navigation = useNavigation();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   return (
     <View style={style.container}>
       <View style = {style.loginContainer}>
         <Text style = {[style.TextAlign, style.LoginText]}>Login Page</Text>
         <TextInput style = {style.TextInput} 
         placeholder='Login' autoComplete='email' 
-        inputMode='email'>
+        inputMode='email' value={email} onChangeText={(text) => {setEmail(text)}}>
         </TextInput>
         <TextInput style = {style.TextInput} 
-        placeholder='Password' secureTextEntry = {true}>
+        placeholder='Password' secureTextEntry = {true} value={password} onChangeText={(text) => {setPassword(text)}}>
         </TextInput>
-        <TouchableOpacity onPress={() => {navigation.navigate("Home")}}>
-          <Text>se connecter</Text>
-        </TouchableOpacity>
-
+        <LoginUser email = {email} password = {password}></LoginUser>
         <View>
-          <Text>si vous n'avez toujours pas de compte cliquez ici</Text>
+          <Text>si vous n'avez toujours pas de compte <Text onPress={() => {navigation.navigate("Register")}}>cliquez ic</Text>i</Text>
         </View>
         <StatusBar style="auto" />
       </View>
@@ -46,6 +51,20 @@ export default function App() {
         <Stack.Screen name="Login" component={LoginPage}
          />
         <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen name="Register" component={RegisterPage} />
+        <Stack.Screen name = "AnnonceSheet" component={AnnonceSheet}
+        options={{
+          presentation: "modal",
+          cardOverlayEnabled: true,
+          cardStyleInterpolator:
+            CardStyleInterpolators.forModalPresentationIOS,
+          cardStyle: {
+            backgroundColor: "transparent",
+            opacity: 0.99,
+            height: "30%",
+          },
+          gestureResponseDistance: 500,
+        }}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
