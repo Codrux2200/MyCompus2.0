@@ -1,0 +1,45 @@
+.container {
+    flex: 1;
+    background-color: #fff;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.TextInput {
+    border: 1px solid black;
+    width: 80%;
+    height: 30px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    padding-left: 10px;
+}
+
+.loginContainer {
+    width: 90%;
+    justify-content: space-between;
+    flex-direction : column;
+    align-items: center;
+    height: 20%;
+    
+}
+
+.TextAlign {
+    text-align: center;
+}
+
+.LoginText {
+    font-weight: bold;
+    font-size: 30;
+}
+
+.labelChoice{
+    border: 1px solid black;
+    width: 80%;
+    height: 30px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    padding-left: 10px;
+}
