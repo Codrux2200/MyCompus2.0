@@ -11,6 +11,8 @@ import {app} from "./Backend/firebase_config"
 import { LoginUser } from './Backend/login';
 import { useState } from 'react';
 import {RegisterPage} from "./register/register"
+import { Mainhome } from './my/MyHome';
+import { AddNewAnnonces } from './BottomSheets/AddAnnonces';
 
 function LoginPage(){
   const navigation = useNavigation();
@@ -51,8 +53,22 @@ export default function App() {
         <Stack.Screen name="Login" component={LoginPage}
          />
         <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen name="MyHome" component={Mainhome} />
         <Stack.Screen name="Register" component={RegisterPage} />
         <Stack.Screen name = "AnnonceSheet" component={AnnonceSheet}
+        options={{
+          presentation: "modal",
+          cardOverlayEnabled: true,
+          cardStyleInterpolator:
+            CardStyleInterpolators.forModalPresentationIOS,
+          cardStyle: {
+            backgroundColor: "transparent",
+            opacity: 0.99,
+            height: "30%",
+          },
+          gestureResponseDistance: 500,
+        }}/>
+        <Stack.Screen name = "AddAnnonceSheet" component={AddNewAnnonces}
         options={{
           presentation: "modal",
           cardOverlayEnabled: true,

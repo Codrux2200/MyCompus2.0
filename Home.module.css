@@ -52,3 +52,19 @@
 .textOverflow {
     font-size: 10px;
 }
+
+
+.overflowButton {
+    position: absolute;
+    background-color: rgba(0,0,0, 0.5);
+    top : 30%;
+    left: 35%;
+    height: 50px;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+.textoverflowButton{
+    color: white;
+    font-weight: bold;
+}

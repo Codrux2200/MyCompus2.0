@@ -1,8 +1,10 @@
 import {View, Text, Image, TouchableOpacity} from "react-native" 
 import styles from "./css/navbar.module.css"
 import {useState, useEffect} from 'react'
+import { useNavigation } from "@react-navigation/native"
 
 export const Navbar = ({setvar}) => {
+    const navigation = useNavigation();
     const [choose_var, setChooseVar] = useState(0);
 
     useEffect(() => {
@@ -15,7 +17,9 @@ export const Navbar = ({setvar}) => {
         <View style = {styles.navbar}>
             <Image source={require("../assets/settings.png")} style = {{width : 30, height : 30}}></Image>
             <Text style = {{alignSelf : 'center', fontWeight : "bold", fontSize : 20}}>MyCompus 2.O</Text>
-            <Image source={require("../assets/pp.png")} style = {{width : 40, height : 40, borderRadius : 100}}></Image>
+            <TouchableOpacity onPress={() => {navigation.navigate("MyHome")}}>
+                <Image source={require("../assets/pp.png")} style = {{width : 40, height : 40, borderRadius : 100}}></Image>
+            </TouchableOpacity>
         </View>
         <View style = {[styles.navbar, {marginTop : 20}]}>
             <TouchableOpacity onPressIn={() => {setChooseVar(0)}}>

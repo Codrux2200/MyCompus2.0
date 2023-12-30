@@ -3,7 +3,7 @@ import { StyleSheet, Text, TextInput, TouchableOpacity, View, Image, ScrollView 
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { useNavigation } from '@react-navigation/native';
-import style from "./AnnonceSheet.module.css"
+import style from "./css/AnnonceSheet.module.css"
 import { useState } from 'react';
 import AnnoncesJson from "../Json/annonces.json"
 import { getElementById } from '../factory/json';
@@ -18,7 +18,4 @@ export const AnnonceSheet = (data) => {
             <Text>hey salut {id}</Text>
         </View>
     )
-
-
-
 };
