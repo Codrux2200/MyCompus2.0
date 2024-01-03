@@ -13,6 +13,7 @@
     border-radius: 10px;
     margin-bottom: 20px;
     padding-left: 10px;
+    margin-bottom: 30px;
 }
 
 .loginContainer {
@@ -21,7 +22,7 @@
     flex-direction : column;
     align-items: center;
     height: 20%;
-    
+    margin-top: 40px;
 }
 
 .TextAlign {
@@ -31,6 +32,7 @@
 .LoginText {
     font-weight: bold;
     font-size: 30;
+    margin-bottom: 30px;
 }
 
 .labelChoice{

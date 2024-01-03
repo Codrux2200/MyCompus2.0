@@ -29,8 +29,8 @@ export const LoginUser = ({email, password}) => {
     return(
 
     <View>
-    <TouchableOpacity onPress={() => {loginbutton(email, password)}}>
-        <Text>se connecter</Text>
+    <TouchableOpacity style = {{backgroundColor : 'grey', width : 200, height : 50, justifyContent : 'center', alignItems : 'center', borderRadius : 100}}  onPress={() => {loginbutton(email, password)}}>
+        <Text style = {{color : 'white', fontWeight : 'bold', fontFamily : "Arial"}}>se connecter</Text>
     </TouchableOpacity>
     </View>
     );
@@ -57,7 +57,7 @@ export const RegisterUser = ({email, password, appt, immb, name}) => {
     return(
 
     <View>
-    <TouchableOpacity onPress={() => {loginbutton(email, password)}}>
+    <TouchableOpacity style = {{backgroundColor : 'grey', width : 200, height : 50, justifyContent : 'center', alignItems : 'center', borderRadius : 100}}   onPress={() => {loginbutton(email, password)}}>
         <Text>crée son compte</Text>
     </TouchableOpacity>
     </View>
@@ -79,9 +79,11 @@ export const LogoutUser = ({email, password}) => {
     return(
 
     <View>
-    <TouchableOpacity onPress={() => {loginbutton(email, password)}}>
+    <TouchableOpacity style = {{color : 'white', fontWeight : 'bold', fontFamily : "Arial"}} onPress={() => {loginbutton(email, password)}}>
         <Text>se deconecter</Text>
     </TouchableOpacity>
     </View>
     );
 }
+
+

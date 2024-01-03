@@ -20,6 +20,7 @@ function LoginPage(){
   const [password, setPassword] = useState("");
   return (
     <View style={style.container}>
+       <Text style = {[style.TextAlign, style.LoginText]}>MyCompus2.0</Text>
       <View style = {style.loginContainer}>
         <Text style = {[style.TextAlign, style.LoginText]}>Login Page</Text>
         <TextInput style = {style.TextInput} 

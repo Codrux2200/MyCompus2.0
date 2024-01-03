@@ -9,7 +9,8 @@ export const BigInput = ({name , placeholder , setValeur}) => {
     return(
         <View style = {styles.container}>
             <Text>{name}</Text>
-            <TextInput style = {styles.input} placeholder = {placeholder} setValue = {setValeur} ></TextInput>
+            <TextInput style = {styles.input} placeholder = {placeholder}
+            onChangeText={(text) => {setValeur(text)}} ></TextInput>
         </View>
     )
 
@@ -23,10 +24,16 @@ export const getBlobFromUri = async (uri, setImages, image) => {
 }
 
 
-export const AddPictures = (props) => {
+export const AddPictures = ({setBigImage}) => {
     const [purcentage, setpurcentage] = useState(0);
     const [Images, setImages] = useState([]);
 
+
+    useEffect(() => {
+        setBigImage(Images);
+
+
+    }, [Images]);
     
     const handleImagePicker = async () => {
         let result = await ImagePicker.launchImageLibraryAsync({
@@ -36,7 +43,6 @@ export const AddPictures = (props) => {
             quality: 0.1,   // 0 means compress for small size, 1 means 
         });
         //await uploadImage(result.uri, "name");
-        console.log("finish", result.assets[0].uri);
         await getBlobFromUri(result.assets[0].uri, setImages, Images);
         }
 
@@ -55,7 +61,10 @@ export const AddPictures = (props) => {
 
 
         return(
+            <View>
+                <Text>Ajoutez des photos</Text>
             <View style = {{flexDirection : 'row', justifyContent : 'space-around'}}>
+                
                 <ScrollView horizontal>
         <TouchableOpacity onPressIn={handleImagePicker} style = {{width : 150, height : 100, backgroundColor : "rgba(93, 95, 239, 1)", flexDirection : 'column', justifyContent : 'center', marginRight : 10}}>
             <Text style = {{textAlign : 'center', color : 'white', fontWeight : 'bold', fontSize  :30}}>+</Text>
@@ -63,7 +72,6 @@ export const AddPictures = (props) => {
             
             {
                 Images.map((element) => {
-                    console.log(element);
                     return(
                         element != '0'?
                     
@@ -84,6 +92,7 @@ export const AddPictures = (props) => {
                 })
             }
         </ScrollView>
+        </View>
         </View>
         );
 
